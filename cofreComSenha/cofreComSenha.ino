@@ -2,15 +2,15 @@
 
 Servo servoTrancaCofre;
 const int buzzer      = 3;
-const int ledVerde    = 13;
-const int ledVermelho = 2;  
+const int ledVerde    = 2;
+const int ledVermelho = 13;  
 
 
 const int linha1  = 4, linha2  = 5, linha3  = 6, linha4  = 7;
 const int coluna1 = 8, coluna2 = 9, coluna3 = 10, coluna4 = 11;
 
 
-const char senha[5] = "1234";
+const char senha[5] = "2580";
 char entrada[5];
 int idx = 0;
 
@@ -73,7 +73,7 @@ void alarme() {
 void destranca() {
   for (int a = 90; a <= 180; a++) {
     servoTrancaCofre.write(a);
-    //delay(10);
+    delay(10);
   }
   digitalWrite(ledVermelho, LOW);
   digitalWrite(ledVerde, HIGH);   
@@ -82,9 +82,9 @@ void destranca() {
 void tranca() {
   for (int a = 180; a >= 90; a--) {
     servoTrancaCofre.write(a);
-    //delay(10);
+    delay(10);
   }
-  digitalWrite(ledVermelho, HIGH);
+  digitalWrite(ledVermelho,HIGH);
   digitalWrite(ledVerde, LOW);      
 }
 
